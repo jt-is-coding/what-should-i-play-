@@ -10,11 +10,38 @@
     justify-content: center;
   }
   
+  img {
+    display: flex;
+    justify-content: center;
+    width: 10%;
+    height: 10%;
+  }
+
 </style>
+
+<% platforms = [] %>
+<% platforms_string = ""%>
+<% testing = nil %>
 <% selected_game = @game_list.sample %>
 <h1><%= selected_game.fetch("name")%></h1>
+<% platforms_array = selected_game.fetch("platforms") %>
+<% platforms_array.each do |loop| %>
+  <% testing = loop %>
+  <% platforms.push(testing.fetch("name")) %>
+<% end %>
+<% platforms.each do |name| %>
+  <% if name == platforms.last %>
+    <% platforms_string = platforms_string + name%>
+  <% else %>
+    <% platforms_string = platforms_string + name + " / " %>
+  <% end %>
+<% end %>
+<p>Available on: <%= platforms_string %></p>
 <% if selected_game.fetch("deck") == nil%>
   <p>Sorry, no description available</p>
 <% else %>
   <p><%= selected_game.fetch("deck") %></p>
 <% end %>
+<% image = selected_game.fetch("image") %>
+<% image_icon = image.fetch("original_url") %>
+<img src="<%= image_icon %>">
