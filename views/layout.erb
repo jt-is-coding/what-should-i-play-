@@ -6,7 +6,24 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
   </head>
 
+  <style>
+    .navbar {
+      display: flex;
+      justify-content:space-around;
+    }
+  </style>
+
+
   <body>
+
+    <div class = "navbar">
+      <div><a href="/">Home</a></div>
+      <div><a href="/search/random">Random Year</a></div>
+      <div><a href="https://www.giantbomb.com/" target="_blank">All info pulled via Giant Bomb's API. Thanks!</a></div>
+    </div>
+
+
+
     <%= yield %>
   </body>
 </html>

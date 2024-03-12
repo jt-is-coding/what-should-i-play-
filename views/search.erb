@@ -1,0 +1,7 @@
+<% selected_game = @game_list.sample %>
+<%= selected_game.fetch("name")%>
+<% if selected_game.fetch("deck") == nil%>
+  <p>Sorry, no description available</p>
+<% else %>
+  <%= selected_game.fetch("deck") %>
+<%end %>
