@@ -15,6 +15,9 @@ get("/search") do
 
   @game_list = []
   user_year = params.fetch("year")
+  if user_year.to_i > 2023 || user_year.to_i < 1972
+    user_year = rand(1972..2023)
+  end
   giant_bomb_url = "https://www.giantbomb.com/api/games/?api_key=#{giant_bomb_key}&format=json&field_list=name,deck,image,platforms&filter=expected_release_year:#{user_year}"
   raw_response = HTTP.get(giant_bomb_url)
   @parsed_response = JSON.parse(raw_response)
@@ -32,6 +35,9 @@ get("/search/:year") do
 
   @game_list = []
   user_year = params.fetch("year")
+  if user_year.to_i > 2023 || user_year.to_i < 1972
+    user_year = rand(1972..2023)
+  end
   giant_bomb_url = "https://www.giantbomb.com/api/games/?api_key=#{giant_bomb_key}&format=json&field_list=name,deck,image,platforms&filter=expected_release_year:#{user_year}"
   raw_response = HTTP.get(giant_bomb_url)
   @parsed_response = JSON.parse(raw_response)
