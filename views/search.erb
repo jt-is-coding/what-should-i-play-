@@ -1,7 +1,20 @@
+<style>
+
+  h1 {
+    display: flex;
+    justify-content: center;
+  }
+
+  p {
+    display: flex;
+    justify-content: center;
+  }
+  
+</style>
 <% selected_game = @game_list.sample %>
-<%= selected_game.fetch("name")%>
+<h1><%= selected_game.fetch("name")%></h1>
 <% if selected_game.fetch("deck") == nil%>
   <p>Sorry, no description available</p>
 <% else %>
-  <%= selected_game.fetch("deck") %>
-<%end %>
+  <p><%= selected_game.fetch("deck") %></p>
+<% end %>
