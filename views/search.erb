@@ -11,8 +11,8 @@
   }
   
   img {
-    display: flex;
-    justify-content: center;
+    display: block;
+    margin: 0 auto;
     width: 10%;
     height: 10%;
   }
@@ -36,12 +36,12 @@
     <% platforms_string = platforms_string + name + " / " %>
   <% end %>
 <% end %>
+<% image = selected_game.fetch("image") %>
+<% image_icon = image.fetch("original_url") %>
+<img src="<%= image_icon %>">
 <p>Available on: <%= platforms_string %></p>
 <% if selected_game.fetch("deck") == nil%>
   <p>Sorry, no description available</p>
 <% else %>
   <p><%= selected_game.fetch("deck") %></p>
 <% end %>
-<% image = selected_game.fetch("image") %>
-<% image_icon = image.fetch("original_url") %>
-<img src="<%= image_icon %>">
