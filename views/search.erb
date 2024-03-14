@@ -2,7 +2,6 @@
 <% platforms_string = ""%>
 <% testing = nil %>
 <% selected_game = @game_list.sample %>
-<p><%= @offset %></p>
 <h1><%= selected_game.fetch("name")%></h1>
 <% platforms_array = selected_game.fetch("platforms") %>
 <% platforms_array.each do |loop| %>
