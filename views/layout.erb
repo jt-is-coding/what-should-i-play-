@@ -4,34 +4,73 @@
     <title>What Should I Play?</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <style>
+    
+      .navbar {
+        display: flex;
+        justify-content:space-around;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+  
+       h1 {
+        display: flex;
+        justify-content: center;
+      }
+
+      p {
+        display: flex;
+        justify-content: center;
+      }
+  
+      img {
+        display: block;
+        margin: 0 auto;
+        width: auto;
+        height: auto;
+      }
+
+      .background--custom {
+        background-image: linear-gradient(90deg, #5BCEFA, #FFFFFF, #F5A9B8);
+        background-size: 300% 300%;
+        animation: gradient 5s alternate infinite;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+      }
+        @keyframes gradient {
+        0% {
+          background-position: 0%;
+        }
+        100% {
+          background-position: 100%;
+        }
+      }
+
+    </style>
   </head>
 
-  <style>
-    .navbar {
-      display: flex;
-      justify-content:space-around;
-    }
-
-  body {
-    display: flex;
-    flex-direction: column;
-    
-  }
-
-  </style>
+  
 
 
   <body>
+    <div class="background--custom">
+      <div class = "navbar">
+        <div><a href="/">Select a year</a></div>
+        <% @random_year = rand(1972..2023) %>
+        <div><a href="/search/<%= @random_year %> ">Random</a></div>
+        <div><a href="https://www.giantbomb.com/" target="_blank">All info pulled via Giant Bomb's API. Thanks!</a></div>
+      </div>
 
-    <div class = "navbar">
-      <div><a href="/">Select a year</a></div>
-      <% @random_year = rand(1972..2023) %>
-      <div><a href="/search/<%= @random_year %> ">Random</a></div>
-      <div><a href="https://www.giantbomb.com/" target="_blank">All info pulled via Giant Bomb's API. Thanks!</a></div>
+    
+      <%= yield %>
+
     </div>
-
-
-
-    <%= yield %>
   </body>
 </html>
