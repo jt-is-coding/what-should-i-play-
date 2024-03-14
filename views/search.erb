@@ -18,9 +18,12 @@
 <% image = selected_game.fetch("image") %>
 <% image_icon = image.fetch("original_url") %>
 <img src="<%= image_icon %>">
-<p>Available on: <%= platforms_string %></p>
-<% if selected_game.fetch("deck") == nil%>
-  <p>Sorry, no description available</p>
-<% else %>
-  <p><%= selected_game.fetch("deck") %></p>
-<% end %>
+
+<div class="info">
+  <p>Available on: <%= platforms_string %></p>
+  <% if selected_game.fetch("deck") == nil%>
+    <p>Sorry, no description available</p>
+  <% else %>
+    <p><%= selected_game.fetch("deck") %></p>
+  <% end %>
+</div>
