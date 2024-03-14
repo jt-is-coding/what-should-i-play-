@@ -13,7 +13,7 @@ gem "puma", "~> 5.0"
 gem "sinatra-activerecord"
 
 group :development do
-
+  gem "better_errors"
   gem "binding_of_caller"
   gem "table_print"
   gem "appdev_support"
