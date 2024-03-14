@@ -1,6 +1,6 @@
 require "sinatra"
 require "sinatra/reloader"
-require "http"
+require "./http"
 require "json"
 
 giant_bomb_key = ENV.fetch("GIANT_BOMB_KEY")
