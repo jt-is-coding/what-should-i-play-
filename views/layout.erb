@@ -13,6 +13,11 @@
         justify-content:space-around;
         font-family: 'Titillium Web', sans-serif;
         font-size: 16px;
+        border: solid black;
+        border-width: 0px 0px 3px 0px;
+        background-color: #ffffff;
+        opacity: .8;
+        padding-bottom: 5px;
       }
 
       .link a {
@@ -95,7 +100,7 @@
   <body>
     <div class="background--custom">
 
-      <div class = "navbar">
+      <div class="navbar">
         <div class="link"><a href="/">Select a year</a></div>
         <% @random_year = rand(1972..2023) %>
         <div class="link"><a href="/search/<%= @random_year %> ">Random</a></div>
